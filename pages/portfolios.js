@@ -1,12 +1,44 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import Link from 'next/link';
 import BaseLayout from '../components/layouts/BaseLayout';
+import axios from 'axios';
 
-const Portfolios = () => {
+const Portfolios = ({ posts }) => {
+  console.log(posts);
+
+  const renderPosts = posts => {
+    return posts.map(post => {
+      return (
+        <Fragment>
+          <li>
+            <Link href={`/portfolio?title=${post.title}`}>
+              <a style={{ fontSize: '20px' }}>{post.title}</a>
+            </Link>
+          </li>
+        </Fragment>
+      );
+    });
+  };
+
   return (
     <BaseLayout>
-      <h1>I am the Portfolios page</h1>
+      <h1>Posts</h1>
+      <ul>{renderPosts(posts)}</ul>
     </BaseLayout>
   );
+};
+
+Portfolios.getInitialProps = async () => {
+  let posts = [];
+  try {
+    const response = await axios.get(
+      'https://jsonplaceholder.typicode.com/posts'
+    );
+    posts = response.data;
+  } catch (err) {
+    console.error(err);
+  }
+  return { posts: posts.splice(0, 10) };
 };
 
 export default Portfolios;
