@@ -7,11 +7,11 @@ const Portfolios = ({ posts }) => {
   console.log(posts);
 
   const renderPosts = posts => {
-    return posts.map(post => {
+    return posts.map((post, i) => {
       return (
         <Fragment>
-          <li>
-            <Link href={`/portfolio?title=${post.title}`}>
+          <li key={i}>
+            <Link as={`/portfolio/${post.id}`} href='/portfolio/[id]'>
               <a style={{ fontSize: '20px' }}>{post.title}</a>
             </Link>
           </li>
