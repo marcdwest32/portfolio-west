@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import Link from 'next/link';
-import { Link as NextLink } from '../../routes';
 import '../../styles/main.scss';
 
 const Header = () => (
@@ -20,10 +19,6 @@ const Header = () => (
     <Link href='/cv'>
       <a>CV</a>
     </Link>
-    <NextLink route='test' params={{ id: '2' }}>
-      Test 2
-    </NextLink>
-    <NextLink route='/test/5'>Test 5</NextLink>
   </Fragment>
 );
 
