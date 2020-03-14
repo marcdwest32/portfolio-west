@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Col, Container, Row } from 'reactstrap';
+import { Col, Container, Row } from 'reactstrap';
 import Typed from 'react-typed';
 import BaseLayout from '../components/layouts/BaseLayout';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,7 +10,7 @@ const Index = () => {
     'Tech Lover',
     'Team Player',
     'React Developer',
-    'Handsome Devil',
+    'Inventor of the spork',
   ];
 
   return (
@@ -44,7 +44,7 @@ const Index = () => {
               <div className='hero-welcome-text'>
                 <h1>
                   Welcome to the portfolio website of Marc West. Get informed,
-                  collaborate and discover projects I hae been working on!
+                  collaborate and discover projects I have been working on!
                 </h1>
               </div>
               <Typed
@@ -61,7 +61,7 @@ const Index = () => {
                 className='self-typed'
               />
               <div className='hero-welcome-bio'>
-                <h1>Let's take a look on my work.</h1>
+                <h1>Let's take a look at my work.</h1>
               </div>
             </Col>
           </Row>

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import Link from 'next/link';
 import BaseLayout from '../components/layouts/BaseLayout';
+import BasePage from '../components/BasePage';
 import axios from 'axios';
 
 const Portfolios = ({ posts }) => {
@@ -22,8 +23,10 @@ const Portfolios = ({ posts }) => {
 
   return (
     <BaseLayout>
-      <h1>Posts</h1>
-      <ul>{renderPosts(posts)}</ul>
+      <BasePage>
+        <h1>Posts</h1>
+        <ul>{renderPosts(posts)}</ul>
+      </BasePage>
     </BaseLayout>
   );
 };

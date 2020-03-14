@@ -1,5 +1,6 @@
 import React from 'react';
 import BaseLayout from '../../components/layouts/BaseLayout';
+import BasePage from '../../components/BasePage';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 
@@ -9,13 +10,15 @@ const Portfolio = ({ post }) => {
 
   return (
     <BaseLayout>
-      <h1>{post.title}</h1>
-      <ul>
-        <li>
-          <h2>{post.body}</h2>
-          <h3>{router.query.id}</h3>
-        </li>
-      </ul>
+      <BasePage>
+        <h1>{post.title}</h1>
+        <ul>
+          <li>
+            <h2>{post.body}</h2>
+            <h3>{router.query.id}</h3>
+          </li>
+        </ul>
+      </BasePage>
     </BaseLayout>
   );
 };
