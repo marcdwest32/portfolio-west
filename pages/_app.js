@@ -4,8 +4,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/main.scss';
 import { Auth0Provider } from '../react-auth0-spa';
 import config from '../auth_config.json';
+// import history from '../utils/history';
 
 function MyApp({ Component, pageProps }) {
+  //   const onRedirectCallback = appState => {
+  //     history.push(
+  //       appState && appState.targetUrl
+  //         ? appState.targetUrl
+  //         : window.location.pathname
+  //     );
+  //   };
+
   return (
     <Auth0Provider
       domain={config.domain}
